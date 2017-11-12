@@ -197,3 +197,15 @@ require get_template_directory() . '/inc/author-meta.php';
  * Search Results - Highlight.
  */
 require get_template_directory() . '/inc/search-highlight.php';
+
+/**
+ * plugin Activation
+ */
+require get_template_directory() . '/inc/plugin-activation.php';
+
+/**
+ * Meta boxes
+ */
+require get_template_directory() . '/inc/meta-box.php';
+
+

@@ -12,21 +12,32 @@
 
 get_header(); ?>
 
-<?php
-$bg_markup = '';
-if ( has_post_thumbnail() ) {
-	$bg_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-	$bg_markup = 'style="background-image: url(\'' . $bg_url[0] . '\');"';
-} 
+<?php $bg_img = rwmb_meta('dwp_banner_image', 'type=image');
+
+$bg_url = '';
+
+if (count($bg_img) > '0') {
+
+	foreach ($bg_img as $img) {
+		$bg = "{$img['full_url']}";
+		$bg_url = 'style="background-image: url(\'' . $bg . '\');"';
+	}
+}
+
 ?>
 
-<div class="pagewrap" <?php echo $bg_markup; ?>>
+<div class="pagewrap" <?php echo $bg_url; ?> >
 <header>
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); 
+	<?php 
+	if( rwmb_meta('dwp_banner_text') != ''){
+		echo '<h1>';
+		echo rwmb_meta('dwp_banner_text');
+		echo '</h1>';
+	} else { 
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	}
 	?>
-</header>
-
-	    
+</header>    
 </div><!-- /headerwrap -->
 
 <div class="container">
