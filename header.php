@@ -23,8 +23,8 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-	<nav role="navigation">
-		<div class="navbar navbar-static-top navbar-default">
+	<nav role="navigation" id="navbar-main">
+		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 				<div class="navbar-header">
@@ -34,7 +34,7 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo( 'name' ) ?></a>
+					<a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><i class="fa fa-diamond"></i></a>
 				</div>
 
 				<div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -44,7 +44,7 @@
 						'theme_location' => 'primary',
 						'depth'      => 2,
 						'container'  => false,
-						'menu_class'     => 'nav navbar-nav navbar-right',
+						'menu_class'     => 'nav navbar-nav',
 						'walker'     => new Bootstrap_Walker_Nav_Menu()
 						);
 
