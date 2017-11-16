@@ -20,13 +20,24 @@ if ( has_post_thumbnail() ) {
 } 
 ?>
 
-<div class="pagewrap" <?php echo $bg_markup; ?>>
-<header>
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); 
-	?>
-</header>
 
-	    
+<div class="pagewrap" <?php echo $bg_markup; ?>>
+
+
+<header>
+
+<?php
+	if(rwmb_meta('dwp_banner_text') != ''){
+		$banner_text = rwmb_meta('dwp_banner_text');
+		echo '<h1 class="entry-title">' . $banner_text . '</h1>';
+	} else {
+		the_title( '<h1 class="entry-title">', '</h1>' ); 
+	}
+?>
+
+</header> 
+
+  
 </div><!-- /headerwrap -->
 
 <div class="container">
