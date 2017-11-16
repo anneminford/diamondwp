@@ -197,3 +197,8 @@ require get_template_directory() . '/inc/author-meta.php';
  * Search Results - Highlight.
  */
 require get_template_directory() . '/inc/search-highlight.php';
+
+/**
+ * Plugin activation */
+require get_template_directory() . '/inc/plugin-activation.php';
+
