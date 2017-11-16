@@ -58,12 +58,19 @@ function dwp_register_meta_boxes( $meta_boxes ) {
             
             // TEXTAREA
             array(
-                'name' => esc_html__( 'Banner Text', 'textdomain' ),
-                'desc' => esc_html__( 'This is the text that will display in the banner', 'textdomain' ),
+                'name' => esc_html__( 'Banner Text', 'meta-box' ),
+                'desc' => esc_html__( 'This is the text that will display in the banner', 'meta-box' ),
                 'id'   => "{$prefix}banner_text",
                 'type' => 'textarea',
                 'cols' => 20,
                 'rows' => 3,
+            ),
+            // BANNER IMAGE
+            array(
+                'name'             => esc_html__('Banner Background Image', 'meta-box' ),
+                'id'               => "{$prefix}banner_image",
+                'type'             => 'image_advanced',
+                'max_file_uploads' => 1,
             ),
         ),
     );
