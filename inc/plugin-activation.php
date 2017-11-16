@@ -61,11 +61,16 @@ function my_theme_register_required_plugins() {
 
 		// This is an example of how to include a plugin bundled with a theme.
 		array(
-			'name'               => 'Meta Box', // The plugin name.
-			'slug'               => 'meta-box', // The plugin slug (typically the folder name).
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'name'               => 'Meta Box', 
+			'slug'               => 'meta-box',
+			'required'           => true, 
+			'force_activation'   => false, 
+			'force_deactivation' => false, 
+		),
+		array(
+			'name'               => 'Redux Framework', 
+			'slug'               => 'redux-framework', 
+			'required'           => true, 
 		),
 	);
 

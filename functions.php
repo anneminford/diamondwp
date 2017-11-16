@@ -206,3 +206,12 @@ require get_template_directory() . '/inc/plugin-activation.php';
  * Meta Box */
 require get_template_directory() . '/inc/meta-box.php';
 
+/**
+ * Redux theme options */
+require get_template_directory() . '/inc/theme-options.php';
+
+/**
+ * Redux theme options */
+require get_template_directory() . '/inc/dwp-options.php';
+
+
