@@ -27,5 +27,3 @@
 		</figure><!-- /figure -->
 	</div><!-- /grid-mask -->
 </div><!-- /col -->
-
-<?php the_post_thumbnail('medium', array('class' => 'alignleft')); ?>

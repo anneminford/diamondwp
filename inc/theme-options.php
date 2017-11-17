@@ -238,7 +238,7 @@
 
                 // ACTUAL DECLARATION OF SECTIONS
 
-                                //General            
+                //General            
                 $this->sections[] = array(
                     'icon'      => 'el-icon-cog',
                     'title'     => __('Blog', 'diamondwp'),
@@ -258,7 +258,32 @@
                         'url'      => 'true',
                         ),
                     )
-                ); 
+                );
+
+                //Portfolio            
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-cog',
+                    'title'     => __('Portfolio', 'diamondwp'),
+                    'fields'    => array(
+                         array(   
+                        'title'     => __('Banner Title', 'diamondwp'), 
+                        'subtitle'  => __('Text for the Portfolio banner title', 'diamondwp'),
+                        'id'        => 'portfolio-banner-title',
+                        'default'   => 'Portfolio Banner Title',
+                        'type'      => 'text',
+                        ),
+                        array(   
+                        'title'     => __('Banner Image', 'diamondwp'), 
+                        'subtitle'  => __('Image for the Portfolio banner', 'diamondwp'),
+                        'id'        => 'portfolio-banner-img',
+                        'type'      => 'media',
+                        'url'      => 'true',
+                        ),
+                    )
+                );
+
+
+
 
                 
 

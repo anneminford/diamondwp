@@ -12,25 +12,22 @@
 
 get_header(); ?>
 
-<?php 
-$bg_img = rwmb_meta('dwp_banner_image', 'type=image');
+<?php
+
+$bg_img = dwp_option('portfolio-banner-img', false, 'url');
 $bg_url = '';
-if (count($bg_img) > '0') {
-	foreach($bg_img as $img){
-		$bg =  "{$img['full_url']}";
-		$bg_url = 'style="background-image: url(' . $bg . ')";';
-	}  
-}
+
+if($bg_img != ''){
+	$bg_url = 'style="background-image: url(' . $bg_img . ')";';
+} 
 ?>
 
 <div class="pagewrap" <?php echo $bg_url; ?>>
 	<header>
 	<?php
-		if(rwmb_meta('dwp_banner_text') != ''){
-			$banner_text = rwmb_meta('dwp_banner_text');
+		if(dwp_option('hp-banner-title', 'Header Text') != ''){
+			$banner_text = dwp_option('portfolio-banner-title', 'Header Text');
 			echo '<h1 class="entry-title">' . $banner_text . '</h1>';
-		} else {
-			the_title( '<h1 class="entry-title">', '</h1>' ); 
 		}
 	?>
 	</header> 
