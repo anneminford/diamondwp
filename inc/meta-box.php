@@ -74,6 +74,7 @@ function dwp_register_meta_boxes( $meta_boxes ) {
             ),
         ),
     );
+    //Portfolio page
     $meta_boxes[] = array(
         // Meta box id, UNIQUE per meta box. Optional since 4.1.5
         'id'         => 'details',
@@ -111,6 +112,38 @@ function dwp_register_meta_boxes( $meta_boxes ) {
                 'id'               => "{$prefix}sliders_image",
                 'type'             => 'image_advanced',
                 'max_file_uploads' => 10,
+            ),
+        ),
+    );
+    // Service page
+    $meta_boxes[] = array(
+        // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+        'id'         => 'service',
+
+        // Meta box title - Will appear at the drag and drop handle bar. Required.
+        'title'      => esc_html__( 'Icon', 'textdomain' ),
+
+        // Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+        'post_types' => array( 'service' ),
+
+        // Where the meta box appear: normal (default), advanced, side. Optional.
+        'context'    => 'normal',
+
+        // Order of meta box: high (default), low. Optional.
+        'priority'   => 'high',
+
+        // Auto save: true, false (default). Optional.
+        'autosave'   => true,
+
+        // List of meta fields
+        'fields'     => array(
+            
+            // TEXTAREA
+            array(
+                'name' => esc_html__( 'Icon', 'meta-box' ),
+                'desc' => esc_html__( 'Pick the icon for this service. Choose <a href="http://www.fontawesome.io/icons/" target="_blank">Font Awesome</a>', 'meta-box' ),
+                'id'   => "{$prefix}service_icon",
+                'type' => 'text',
             ),
         ),
     );

@@ -281,6 +281,27 @@
                         ),
                     )
                 );
+                //Service            
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-cog',
+                    'title'     => __('Service', 'diamondwp'),
+                    'fields'    => array(
+                         array(   
+                        'title'     => __('Banner Title', 'diamondwp'), 
+                        'subtitle'  => __('Text for the Service banner title', 'diamondwp'),
+                        'id'        => 'service-banner-title',
+                        'default'   => 'Service Banner Title',
+                        'type'      => 'text',
+                        ),
+                        array(   
+                        'title'     => __('Banner Image', 'diamondwp'), 
+                        'subtitle'  => __('Image for the Service banner', 'diamondwp'),
+                        'id'        => 'service-banner-img',
+                        'type'      => 'media',
+                        'url'      => 'true',
+                        ),
+                    )
+                );
 
 
 

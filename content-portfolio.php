@@ -6,15 +6,6 @@
  */
 ?>
 
-<script type="text/javascript">window.onload = function() {
-    if (window.jQuery) {  
-        // jQuery is loaded  
-        console.log("jquery loaded");
-    } else {
-        // jQuery is not loaded
-        console.log("Doesn't Work");
-    }
-}</script>
 <!-- PORTFOLIO ITEM -->
 <div class="col-sm-6 col-md-4">
 	<div class="grid mask">
