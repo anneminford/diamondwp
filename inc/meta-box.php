@@ -42,7 +42,7 @@ function dwp_register_meta_boxes( $meta_boxes ) {
         'title'      => esc_html__( 'Title Banner', 'textdomain' ),
 
         // Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
-        'post_types' => array( 'post', 'page' ),
+        'post_types' => array( 'post', 'page', 'portfolio' ),
 
         // Where the meta box appear: normal (default), advanced, side. Optional.
         'context'    => 'normal',
@@ -69,6 +69,46 @@ function dwp_register_meta_boxes( $meta_boxes ) {
             array(
                 'name'             => esc_html__('Banner Background Image', 'meta-box' ),
                 'id'               => "{$prefix}banner_image",
+                'type'             => 'image_advanced',
+                'max_file_uploads' => 1,
+            ),
+        ),
+    );
+    $meta_boxes[] = array(
+        // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+        'id'         => 'details',
+
+        // Meta box title - Will appear at the drag and drop handle bar. Required.
+        'title'      => esc_html__( 'Details', 'textdomain' ),
+
+        // Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+        'post_types' => array( 'portfolio' ),
+
+        // Where the meta box appear: normal (default), advanced, side. Optional.
+        'context'    => 'normal',
+
+        // Order of meta box: high (default), low. Optional.
+        'priority'   => 'high',
+
+        // Auto save: true, false (default). Optional.
+        'autosave'   => true,
+
+        // List of meta fields
+        'fields'     => array(
+            
+            // TEXTAREA
+            array(
+                'name' => esc_html__( 'Details Text', 'meta-box' ),
+                'desc' => esc_html__( 'This is the text that will display next to the main content', 'meta-box' ),
+                'id'   => "{$prefix}side_details",
+                'type' => 'textarea',
+                'cols' => 20,
+                'rows' => 3,
+            ),
+            // BANNER IMAGE
+            array(
+                'name'             => esc_html__('Slider Image', 'meta-box' ),
+                'id'               => "{$prefix}sliders_image",
                 'type'             => 'image_advanced',
                 'max_file_uploads' => 1,
             ),
