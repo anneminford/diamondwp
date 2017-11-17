@@ -33,10 +33,26 @@ if($bg_img != ''){
 	</header> 
 </div><!-- /pagewrap -->
 
+
+
 <div class="container">
 	<div class="row">
 		<div id="primary" class="col-lg-12">
 			<main id="main" class="site-main" role="main">
+			<?php 
+				if(dwp_option('page-title-text') != ''){
+					$title_text = dwp_option('page-title-text');
+					echo '<h3 class="entry-title">' . $title_text . '</h3>';
+				}
+				if(dwp_option('page-intro-copy') != ''){
+					$intro_copy = dwp_option('page-intro-copy');
+					echo '<p>' . $intro_copy . '</p>';
+				}
+				if(dwp_option('editor-text') != ''){
+					$editor_text = dwp_option('editor-text');
+					echo '<p>' . $editor_text . '</p>';
+				}
+			?>
 
 				<?php 
 				// the query

@@ -300,6 +300,25 @@
                         'type'      => 'media',
                         'url'      => 'true',
                         ),
+                        array(   
+                        'title'     => __('Page Title', 'diamondwp'), 
+                        'subtitle'  => __('Page Title for the Services Page', 'diamondwp'),
+                        'id'        => 'page-title-text',
+                        'type'      => 'textarea',
+                        ),
+                        array(   
+                        'title'     => __('Intro Copy', 'diamondwp'), 
+                        'subtitle'  => __('Intro Copy for the Services Page', 'diamondwp'),
+                        'id'        => 'page-intro-copy',
+                        'type'      => 'textarea',
+                        ),
+                        array(   
+                        'id'        => 'editor-text',
+                        'type'      => 'editor',
+                        'title'     => __('Editor Text', 'text edited here'), 
+                        'subtitle'  => __('Subtitle text would go here.', 'subtitle edited here'),
+                        'default'   => __('service content here'),
+                        ),
                     )
                 );
 
