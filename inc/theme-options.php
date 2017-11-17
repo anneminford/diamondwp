@@ -317,7 +317,8 @@
                         'type'      => 'editor',
                         'title'     => __('Editor Text', 'text edited here'), 
                         'subtitle'  => __('Subtitle text would go here.', 'subtitle edited here'),
-                        'default'   => __('service content here'),
+                        'default'   => '<h3 class="text-center">Services We Offer </h3>
+                        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam mattis ex, ut imperdiet magna imperdiet at. Proin eget pulvinar lorem. Curabitur rhoncus vehicula libero, nec porttitor lectus. Fusce mattis eu leo id tempus. Donec in ultrices nisl. </p>',
                         ),
                     )
                 );

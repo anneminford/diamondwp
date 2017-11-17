@@ -42,7 +42,7 @@ if($bg_img != ''){
 			<?php 
 				if(dwp_option('page-title-text') != ''){
 					$title_text = dwp_option('page-title-text');
-					echo '<h3 class="entry-title">' . $title_text . '</h3>';
+					echo '<h3 class="text-center">' . $title_text . '</h3>';
 				}
 				if(dwp_option('page-intro-copy') != ''){
 					$intro_copy = dwp_option('page-intro-copy');
