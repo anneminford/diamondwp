@@ -110,7 +110,7 @@ function dwp_register_meta_boxes( $meta_boxes ) {
                 'name'             => esc_html__('Slider Image', 'meta-box' ),
                 'id'               => "{$prefix}sliders_image",
                 'type'             => 'image_advanced',
-                'max_file_uploads' => 1,
+                'max_file_uploads' => 10,
             ),
         ),
     );

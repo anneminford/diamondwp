@@ -7,9 +7,30 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
-		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail(); ?>
-		<?php endif; ?>
+
+		
+		
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+				 <ol class="carousel-indicators">
+				  	<?php $slider_img = rwmb_meta('dwp_sliders_image', 'type=image'); ?>
+					<?php if (count($slider_img) > '0') {
+						$number ='0';
+						foreach($slider_img as $img){
+				    echo '<li data-target="#carousel-example-generic" data-slide-to="'. $number .'"></li>';
+				    $number ++;				}  
+					}?>
+				 </ol>
+				<div class="carousel-inner">
+				<?php $slider_img = rwmb_meta('dwp_sliders_image', 'type=image'); ?>
+				<?php if (count($slider_img) > '0') {
+					foreach($slider_img as $img){
+						$slider_img =  "{$img['full_url']}";
+						echo '<div class="item"><img src="' . $slider_img . '"/></div>';
+					}  
+				}?>
+			</div>
+		</div>
 
 		<div class="row">
 			<div class="col-lg-8">
