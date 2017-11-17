@@ -461,6 +461,10 @@ a:after {
     margin-bottom: 20px;
 }
 
+.portfolio-items {
+    padding-top: 40px;
+}
+
 /* ==========================================================================
    Image Mask
    ========================================================================== */
@@ -521,8 +525,8 @@ a:after {
 	-moz-transition: -moz-transform 0.4s;
 	transition: transform 0.4s;
 }
-
-.no-touch .mask figure:hover img,
+.mask figure:hover img,
+/*.no-touch .mask figure:hover img,*/
 .mask figure.cs-hover img {
 	-webkit-transform: translateY(-30px);
 	-moz-transform: translateY(-30px);
@@ -535,7 +539,7 @@ a:after {
 	width: 100%;
 	top: auto;
 	bottom: 0;
-	opacity: 0;
+	/*opacity: 0;*/
 	-webkit-transform: translateY(100%);
 	-moz-transform: translateY(100%);
 	-ms-transform: translateY(100%);
@@ -544,8 +548,9 @@ a:after {
 	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
 	transition: transform 0.4s, opacity 0.1s 0.3s;
 }
+/*.no-touch .mask figure:hover figcaption,*/
 
-.no-touch .mask figure:hover figcaption,
+.mask figure:hover figcaption,
 .mask figure.cs-hover figcaption {
 	opacity: 1;
 	-webkit-transform: translateY(0px);
@@ -946,7 +951,7 @@ img {
 }
 
 img.wp-post-image {
-	margin-bottom: 20px;
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------

@@ -38,25 +38,41 @@ if (count($bg_img) > '0') {
 
 <div class="container">
 	<div class="row">
+		<div id="primary" class="col-lg-12">
+			<main id="main" class="site-main" role="main">
 
-	<div id="primary" class="col-md-8 col-lg-8">
-		<main id="main" class="site-main" role="main">
+				<?php 
+				// the query
+				$the_query = new WP_Query( array('post_type' => 'portfolio') ); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php if ( $the_query->have_posts() ) : ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+					<div class="row">
+						<div class="portfolio-items">
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+						<!-- the loop -->
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			            <?php get_template_part( 'content', 'portfolio' ); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+						<?php endwhile; ?>
+						<!-- end of the loop -->
 
-<?php get_sidebar(); ?>
+					</div> <!-- #portfolio-items -->
+
+					</div> <!-- .row -->
+					
+
+					<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+					<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+				<?php endif; ?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div> <!-- .row -->
+</div> <!-- .container -->
+
+
 <?php get_footer(); ?>
