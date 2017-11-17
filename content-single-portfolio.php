@@ -9,26 +9,27 @@
 	<div class="entry-content">
 
 		
-		
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-				 <ol class="carousel-indicators">
-				  	<?php $slider_img = rwmb_meta('dwp_sliders_image', 'type=image'); ?>
+		<div class="portfolio-featured">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+					 <ol class="carousel-indicators">
+					  	<?php $slider_img = rwmb_meta('dwp_sliders_image', 'type=image'); ?>
+						<?php if (count($slider_img) > '0') {
+							$number ='0';
+							foreach($slider_img as $img){
+					    echo '<li data-target="#carousel-example-generic" data-slide-to="'. $number .'"></li>';
+					    $number ++;				}  
+						}?>
+					 </ol>
+					<div class="carousel-inner">
+					<?php $slider_img = rwmb_meta('dwp_sliders_image', 'type=image'); ?>
 					<?php if (count($slider_img) > '0') {
-						$number ='0';
 						foreach($slider_img as $img){
-				    echo '<li data-target="#carousel-example-generic" data-slide-to="'. $number .'"></li>';
-				    $number ++;				}  
+							$slider_img =  "{$img['full_url']}";
+							echo '<div class="item"><img src="' . $slider_img . '"/></div>';
+						}  
 					}?>
-				 </ol>
-				<div class="carousel-inner">
-				<?php $slider_img = rwmb_meta('dwp_sliders_image', 'type=image'); ?>
-				<?php if (count($slider_img) > '0') {
-					foreach($slider_img as $img){
-						$slider_img =  "{$img['full_url']}";
-						echo '<div class="item"><img src="' . $slider_img . '"/></div>';
-					}  
-				}?>
+				</div>
 			</div>
 		</div>
 
