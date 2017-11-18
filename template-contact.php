@@ -87,9 +87,6 @@ if (count($bg_img) > '0') {
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					</header><!-- .entry-header -->
 
 					<div class="entry-content">
 						<?php the_content(); ?>
@@ -135,7 +132,7 @@ if (count($bg_img) > '0') {
 						                
 						               </div>
 						               <div class="form-actions">
-						                    <button type="submit" class="btn btn-primary"><?php _e('Send Email', 'bootstrapwp'); ?></button>
+						                    <button type="submit" class="btn btn-theme"><?php _e('Send Email', 'bootstrapwp'); ?></button>
 						                    <input type="hidden" name="submitted" id="submitted" value="true" />
 						               </div>
 						        </form>
