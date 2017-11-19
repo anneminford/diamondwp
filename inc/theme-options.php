@@ -238,7 +238,49 @@
 
                 // ACTUAL DECLARATION OF SECTIONS
 
-                //General            
+                //Homepage                  
+                $this->sections[] = array(
+                    'icon'      => 'el-icon-home',
+                    'title'     => __('Homepage', 'diamondwp'),
+                    //'subsection' => true,
+                    'fields'    => array(
+                        array(
+                            'id'        => 'homepage-layout',
+                            'type'      => 'sorter',
+                            'title'     => __('Homepage Layout Manager', 'diamondwp'),
+                            'desc'      => __('Organize how you want the layout to appear on the homepage', 'diamondwp'),
+                            'options'   => array(
+                                'enabled'   => array(
+                                    'herocontent'   => 'Hero Content',
+                                    'widgets'       => 'Widgets',
+                                ),
+                                'disabled'  => array(
+                                    'homecontent'   => 'Home Content',
+                                    'heropost'      => 'Hero Post',
+                                    
+                                ),
+                                
+                            ),
+                        ),
+                        array(   
+                        'title'     => __('Banner Title', 'diamondwp'), 
+                        'subtitle'  => __('Text for the hero banner title', 'diamondwp'),
+                        'id'        => 'home-hero-title',
+                        'default'   => 'Hero Banner Text',
+                        'type'      => 'textarea',
+                        ),
+                        array(   
+                        'title'     => __('Banner Image', 'diamondwp'), 
+                        'subtitle'  => __('Image for the hero banner', 'diamondwp'),
+                        'id'        => 'home-banner-img',
+                        'type'      => 'media',
+                        'url'      => 'true',
+                        ),
+
+                    )
+                );
+
+                //blog            
                 $this->sections[] = array(
                     'icon'      => 'el-icon-cog',
                     'title'     => __('Blog', 'diamondwp'),
@@ -247,7 +289,7 @@
                         'title'     => __('Banner Title', 'diamondwp'), 
                         'subtitle'  => __('Text for the banner title', 'diamondwp'),
                         'id'        => 'hp-banner-title',
-                        'default'   => 'Homepage Banner Title',
+                        'default'   => 'Blog Banner Title',
                         'type'      => 'text',
                         ),
                         array(   
