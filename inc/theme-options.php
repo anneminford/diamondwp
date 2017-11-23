@@ -255,9 +255,8 @@
                                     'service'       => 'Service',
                                 ),
                                 'disabled'  => array(
-                                    'homecontent'   => 'Home Content',
+                                    'herocontent2'   => 'Hero Content2',
                                     'heropost'      => 'Hero Post',
-                                    
                                 ),
                                 
                             ),
@@ -282,7 +281,26 @@
                         'id'        => 'home-number-services',
                         'type'      => 'text',
                         ),
-
+                        array(   
+                        'title'     => __('Heading', 'diamondwp'), 
+                        'subtitle'  => __('Two column section heading', 'diamondwp'),
+                        'id'        => 'heading-two-col',
+                        'type'      => 'text',
+                        ),
+                        array(   
+                        'title'     => __('Left Text Area', 'diamondwp'), 
+                        'subtitle'  => __('Text for left', 'diamondwp'),
+                        'id'        => 'left-text',
+                        'default'   => 'Left text area',
+                        'type'      => 'textarea',
+                        ),
+                         array(   
+                        'title'     => __('Right Text Area', 'diamondwp'), 
+                        'subtitle'  => __('Text for right', 'diamondwp'),
+                        'id'        => 'right-text',
+                        'default'   => 'Right text area',
+                        'type'      => 'textarea',
+                        ),
                     )
                 );
 

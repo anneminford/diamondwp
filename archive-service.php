@@ -56,24 +56,30 @@ if($bg_img != ''){
 
 				<?php 
 				// the query
-				$the_query = new WP_Query( array('post_type' => 'service') ); ?>
+				$the_query = new WP_Query( array('post_type' => 'service') ); $counter = 0 ?>
 
 				<?php if ( $the_query->have_posts() ) : ?>
 
-					<div class="row">
+					
 						<div class="services">
+							<div class="row">
 
 						<!-- the loop -->
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 			            <?php get_template_part( 'content', 'service' ); ?>
 
+			            <?php $counter++;
+				          if ($counter % 3 == 0) {
+				          echo '</div><div class="row">';
+				         } ?>
 						<?php endwhile; ?>
 						<!-- end of the loop -->
 
-					</div> <!-- #service-items -->
+					
+					</div> <!--.row -->
+				</div> <!-- #service-items -->
 
-					</div> <!-- .row -->
 					
 
 					<?php wp_reset_postdata(); ?>
