@@ -252,7 +252,7 @@
                             'options'   => array(
                                 'enabled'   => array(
                                     'herocontent'   => 'Hero Content',
-                                    'widgets'       => 'Widgets',
+                                    'service'       => 'Service',
                                 ),
                                 'disabled'  => array(
                                     'homecontent'   => 'Home Content',
@@ -275,6 +275,12 @@
                         'id'        => 'home-banner-img',
                         'type'      => 'media',
                         'url'      => 'true',
+                        ),
+                        array(   
+                        'title'     => __('Service Display Number', 'diamondwp'), 
+                        'subtitle'  => __('Max number of services to display', 'diamondwp'),
+                        'id'        => 'home-number-services',
+                        'type'      => 'text',
                         ),
 
                     )
