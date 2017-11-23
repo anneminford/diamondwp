@@ -54,8 +54,29 @@ if(isset($_POST['submitted'])) {
 
 get_header(); ?>
 
-<?php
- ?>
+<?php 
+$bg_img = rwmb_meta('dwp_banner_image', 'type=image');
+$bg_url = '';
+if (count($bg_img) > '0') {
+	foreach($bg_img as $img){
+		$bg =  "{$img['full_url']}";
+		$bg_url = 'style="background-image: url(' . $bg . ')";';
+	}  
+}
+?>
+
+<div class="pagewrap" <?php echo $bg_url; ?>>
+	<header>
+	<?php
+		if(rwmb_meta('dwp_banner_text') != ''){
+			$banner_text = rwmb_meta('dwp_banner_text');
+			echo '<h1 class="entry-title">' . $banner_text . '</h1>';
+		} else {
+			the_title( '<h1 class="entry-title">', '</h1>' ); 
+		}
+	?>
+	</header> 
+</div><!-- /pagewrap -->
 
 <div class="container">
 	<div class="row">
@@ -66,9 +87,6 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					</header><!-- .entry-header -->
 
 					<div class="entry-content">
 						<?php the_content(); ?>
@@ -114,7 +132,7 @@ get_header(); ?>
 						                
 						               </div>
 						               <div class="form-actions">
-						                    <button type="submit" class="btn btn-primary"><?php _e('Send Email', 'bootstrapwp'); ?></button>
+						                    <button type="submit" class="btn btn-theme"><?php _e('Send Email', 'bootstrapwp'); ?></button>
 						                    <input type="hidden" name="submitted" id="submitted" value="true" />
 						               </div>
 						        </form>

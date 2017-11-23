@@ -13,10 +13,31 @@
 
 get_header(); ?>
 
+<?php
+
+$bg_img = dwp_option('hp-banner-img', false, 'url');
+$bg_url = '';
+
+if($bg_img != ''){
+	$bg_url = 'style="background-image: url(' . $bg_img . ')";';
+} 
+?>
+
+<div class="pagewrap" <?php echo $bg_url; ?>>
+	<header>
+	<?php
+		if(dwp_option('hp-banner-title', 'Header Text') != ''){
+			$banner_text = dwp_option('hp-banner-title', 'Header Text');
+			echo '<h1 class="entry-title">' . $banner_text . '</h1>';
+		}
+	?>
+	</header> 
+</div><!-- /pagewrap -->
+
 <div class="container">
 	<div class="row">
 
-	<div id="primary" class="col-md-9 col-lg-9">
+	<div id="primary" class="col-md-8 col-lg-8">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>

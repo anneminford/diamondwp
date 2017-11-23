@@ -10,28 +10,32 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer footer-columns" role="contentinfo">
 
-		<div class="container">
+		<div class="container footer-section">
 			<div class="row">
-			<div class="col-md-6 col-lg-6">
-				<?php if (has_nav_menu('footer-menu', 'bootstrapwp')) { ?>
-		            <nav role="navigation">
-		            <?php wp_nav_menu(array(
-		              'container'       => '',
-		              'menu_class'      => 'footer-menu',
-		              'theme_location'  => 'footer-menu')
-		            ); 
-		            ?>
-		          </nav>
-            	<?php } ?>
-			</div>
-			<div class="col-md-6 col-lg-6">
-				<p class="alignright">&copy; <?php _e('Copyright', 'bootstrapwp'); ?> <?php echo date('Y'); ?> - <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-			</div>
+				<h1 class="centered">THANKS FOR VISITING</h1>
+				<hr>
+				<div class="col-lg-4">
+					<?php dynamic_sidebar( 'footer-1' ); ?>
+				</div>
+				<div class="col-lg-4">
+					<?php dynamic_sidebar( 'footer-2' ); ?>
+				</div>
+				<div class="col-lg-4">
+					<?php dynamic_sidebar( 'footer-3' ); ?>
+				</div>
 		</div><!-- .row -->
 	</div><!-- .containr -->
+	<div class="footerwrap">
+	<div class="container">
+		<h4>Created by <a href="http://braginteractive.com">Brad Williams</a> - &copy; <?php _e('Copyright', 'bootstrapwp'); ?> <?php echo date('Y'); ?></h4>
+	</div>
+</div>
 </footer><!-- #colophon -->
+
+
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
